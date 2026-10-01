@@ -94,40 +94,42 @@ a:focus-visible {
   чтобы оно не растягивалось слишком сильно на широких экранах.
 */
 .site-header {
-  max-width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md) var(--space-lg);
+  max-width: var(--container-width);
   margin: 0 auto;
 }
 
 /*
   Оформляем текстовый логотип.
 */
-.site-logo {
+.site-header__logo {
   font-weight: bold;
   text-decoration: none;
-  color: #222222;
+  color: var(--color-text);
 }
 
 /*
-  Убираем стандартные отступы и маркеры списка навигации.
+  Располагаем пункты меню в ряд с переносом на узких экранах.
 */
 .site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-lg);
   padding: 0;
-  margin: 16px 0 0;
+  margin: 0;
   list-style: none;
-}
-
-/*
-  Добавляем расстояние между пунктами меню.
-*/
-.site-nav__list li {
-  margin-bottom: 8px;
 }
 
 /*
   Оформляем ссылки меню.
 */
-.site-nav__list a {
-  color: #0057b8;
+.site-nav__link {
+  display: inline-block;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -135,7 +137,7 @@ a:focus-visible {
   При наведении мыши подчёркиваем ссылку.
   Подробно состояния интерфейса будут рассмотрены в практической работе 1.7.
 */
-.site-nav__list a:hover {
+.site-nav__link:hover {
   text-decoration: underline;
 }
 
@@ -162,10 +164,22 @@ a:focus-visible {
 
 
 /*
-  Карточка товара — самостоятельный блок.
+  Сетка товаров: число колонок зависит от доступной ширины.
+*/
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: var(--space-md);
+}
+
+/*
+  Карточка товара — самостоятельный БЭМ-блок.
 */
 .product-card {
-  margin-bottom: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  min-width: 0;
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -176,8 +190,19 @@ a:focus-visible {
   border-color: var(--color-primary);
 }
 
-.product-card h3 {
-  margin-top: 0;
+.product-card__title,
+.product-card__description,
+.product-card__price {
+  margin: 0;
+}
+
+.product-card__price {
+  font-weight: bold;
+}
+
+.product-card__button {
+  align-self: flex-start;
+  margin-top: auto;
 }
 
 /*
