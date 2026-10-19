@@ -3,60 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Контактная информация учебного интернет-магазина.">
-  <title>Контакты — Учебный интернет-магазин</title>
+  <meta name="description" content="Контакты MadShop, график работы, доставка, оплата и возврат.">
+  <title>Контакты и доставка — MadShop</title>
+  <link rel="icon" href="images/madshop-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
+
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
-
+      <a class="site-header__brand" href="index.html" aria-label="MadShop — на главную">
+        <img class="site-header__logo" src="images/madshop-logo.svg" width="48" height="48" alt="">
+        <span class="site-header__name">MadShop</span>
+      </a>
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Хит продаж</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Оформить заказ</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="contacts.html" aria-current="page">Контакты</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
       <span class="breadcrumbs__current">Контакты</span>
     </nav>
 
-
-    <section class="section">
-      <h1>Контакты</h1>
-      <p>
-        Здесь размещается контактная информация учебного интернет-магазина.
+    <section class="page-intro">
+      <p class="page-intro__eyebrow">Связь с MadShop</p>
+      <h1 class="page-intro__title">Поможем с выбором и заказом</h1>
+      <p class="page-intro__text">
+        Ответим на вопросы о характеристиках, совместимости, доставке и гарантии.
       </p>
-
-      <ul>
-        <li>Телефон: +7 (900) 000-00-00</li>
-        <li>E-mail: info@example.com</li>
-        <li>Адрес: г. Москва, учебный проект</li>
-      </ul>
     </section>
 
-    <section class="section" id="feedback">
-      <h2>Обратная связь</h2>
-      <p>
-        Для отправки заявки используйте форму в модальном окне на главной странице.
-      </p>
-      <a class="button button--primary" href="index.html#contacts">Перейти к форме</a>
+    <section class="contact-grid" aria-label="Контактная информация">
+      <article class="contact-card">
+        <span class="contact-card__icon" aria-hidden="true">☎</span>
+        <h2 class="contact-card__title">Телефон</h2>
+        <a class="contact-card__link" href="tel:+74951234567">+7 (495) 123-45-67</a>
+        <p class="contact-card__text">Ежедневно с 10:00 до 20:00</p>
+      </article>
+
+      <article class="contact-card">
+        <span class="contact-card__icon" aria-hidden="true">✉</span>
+        <h2 class="contact-card__title">E-mail</h2>
+        <a class="contact-card__link" href="mailto:madshop@email.ru">madshop@email.ru</a>
+        <p class="contact-card__text">Ответим в течение рабочего дня</p>
+      </article>
+
+      <article class="contact-card">
+        <span class="contact-card__icon" aria-hidden="true">⌖</span>
+        <h2 class="contact-card__title">Самовывоз</h2>
+        <p class="contact-card__link">Москва, ул. Электродная, 8</p>
+        <p class="contact-card__text">Пн–Сб, с 11:00 до 19:00</p>
+      </article>
+    </section>
+
+    <section class="section" id="delivery">
+      <div class="section__heading">
+        <div>
+          <p class="section__eyebrow">Покупателям</p>
+          <h2 class="section__title">Доставка и оплата</h2>
+        </div>
+      </div>
+
+      <div class="info-grid">
+        <article class="info-card">
+          <h3 class="info-card__title">Доставка по Москве</h3>
+          <p class="info-card__text">
+            Курьерская доставка в течение 1–2 дней. Стоимость зависит от адреса.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3 class="info-card__title">Доставка по России</h3>
+          <p class="info-card__text">
+            Отправляем транспортной компанией после согласования сроков и стоимости.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3 class="info-card__title">Оплата</h3>
+          <p class="info-card__text">
+            Банковской картой или наличными при получении.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3 class="info-card__title">Возврат</h3>
+          <p class="info-card__text">
+            Возврат в течение 14 дней при сохранении комплектации и внешнего вида.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-cta">
+      <div>
+        <p class="contact-cta__eyebrow">Есть вопрос?</p>
+        <h2 class="contact-cta__title">Оставьте заявку на консультацию</h2>
+        <p class="contact-cta__text">
+          Расскажите, какое устройство ищете и с чем оно должно работать.
+        </p>
+      </div>
+      <a class="button button--light" href="order.html">Заполнить форму</a>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    <div class="site-footer__inner">
+      <div class="site-footer__about">
+        <a class="site-footer__brand" href="index.html">
+          <img src="images/madshop-logo.svg" width="40" height="40" alt="">
+          <span>MadShop</span>
+        </a>
+        <p>Компьютерная периферия для работы, игр и творчества.</p>
+      </div>
+      <div class="site-footer__column">
+        <h2 class="site-footer__title">Покупателям</h2>
+        <ul class="site-footer__list">
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="order.html">Оформление заказа</a></li>
+          <li><a href="#delivery">Доставка и оплата</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__column">
+        <h2 class="site-footer__title">Контакты</h2>
+        <address class="site-footer__address">
+          <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+          <a href="mailto:madshop@email.ru">madshop@email.ru</a>
+          <span>Москва, ул. Электродная, 8</span>
+        </address>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>© 2026 MadShop</p>
+      <p>Информация на сайте не является публичной офертой.</p>
+    </div>
   </footer>
 </body>
 </html>
