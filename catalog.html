@@ -3,130 +3,211 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Каталог товаров учебного интернет-магазина.">
-  <title>Каталог товаров — Учебный интернет-магазин</title>
+  <meta name="description" content="Каталог компьютерной периферии MadShop: клавиатуры, мыши, наушники, камеры и аксессуары.">
+  <title>Каталог товаров — MadShop</title>
+  <link rel="icon" href="images/madshop-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
+
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__brand" href="index.html" aria-label="MadShop — на главную">
+        <img class="site-header__logo" src="images/madshop-logo.svg" width="48" height="48" alt="">
+        <span class="site-header__name">MadShop</span>
+      </a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html" aria-current="page">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Хит продаж</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Оформить заказ</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-
-  <main>
+  <main id="main-content">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
       <span class="breadcrumbs__current">Каталог</span>
     </nav>
 
-
-    <section class="section">
-      <h1>Каталог товаров</h1>
-      <p>
-        На этой странице представлен учебный каталог товаров.
-        В дальнейшем здесь будут добавлены фильтры, сортировка и более
-        подробные карточки.
+    <section class="page-intro">
+      <p class="page-intro__eyebrow">Каталог MadShop</p>
+      <h1 class="page-intro__title">Периферия для вашего рабочего места</h1>
+      <p class="page-intro__text">
+        Здесь собраны устройства для работы, общения, игр и организации рабочего стола.
       </p>
     </section>
 
-    <section class="catalog-layout">
-        <aside class="catalog-filters">
-            <h2>Фильтры</h2>
+    <div class="catalog-layout">
+      <aside class="catalog-filters" aria-labelledby="filters-title">
+        <h2 class="catalog-filters__title" id="filters-title">Фильтры</h2>
 
-            <form class="filters-form" action="#" method="get">
-            <fieldset>
-                <legend>Категория</legend>
+        <form class="filters-form" action="#" method="get">
+          <div class="filters-form__field">
+            <label class="filters-form__label" for="catalog-search">Поиск</label>
+            <input class="filters-form__input" id="catalog-search" name="search" type="search" placeholder="Название товара">
+          </div>
 
-                <label>
-                <input type="checkbox" name="category" value="all">
-                Все товары
-                </label>
+          <fieldset class="filters-form__group">
+            <legend class="filters-form__legend">Категория</legend>
+            <label class="filters-form__check">
+              <input type="radio" name="category" value="all" checked>
+              <span>Все товары</span>
+            </label>
+            <label class="filters-form__check">
+              <input type="radio" name="category" value="input">
+              <span>Устройства ввода</span>
+            </label>
+            <label class="filters-form__check">
+              <input type="radio" name="category" value="audio">
+              <span>Аудио</span>
+            </label>
+            <label class="filters-form__check">
+              <input type="radio" name="category" value="accessories">
+              <span>Аксессуары</span>
+            </label>
+          </fieldset>
 
-                <label>
-                <input type="checkbox" name="category" value="popular">
-                Популярные
-                </label>
-
-                <label>
-                <input type="checkbox" name="category" value="new">
-                Новинки
-                </label>
-            </fieldset>
-
-            <fieldset>
-                <legend>Цена</legend>
-
+          <fieldset class="filters-form__group">
+            <legend class="filters-form__legend">Цена, ₽</legend>
+            <div class="filters-form__range">
+              <div>
                 <label for="price-from">От</label>
-                <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
-
+                <input class="filters-form__input" id="price-from" name="price-from" type="number" min="0" placeholder="0">
+              </div>
+              <div>
                 <label for="price-to">До</label>
-                <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
-            </fieldset>
-
-            <button class="button button--primary" type="submit">Применить</button>
-            </form>
-        </aside>
-
-        <section class="catalog-products">
-            <h2>Список товаров</h2>
-
-            <div class="products-grid">
-            <!-- Карточки товаров -->
+                <input class="filters-form__input" id="price-to" name="price-to" type="number" min="0" placeholder="8000">
+              </div>
             </div>
-        </section>
-    </section>
+          </fieldset>
 
+          <button class="button button--primary" type="button" disabled>Применить</button>
+          <p class="filters-form__note">Фильтрация станет доступна позже.</p>
+        </form>
+      </aside>
 
-    <section class="section">
-      <h2>Список товаров</h2>
+      <section class="catalog-products" aria-labelledby="catalog-title">
+        <div class="catalog-products__heading">
+          <h2 class="catalog-products__title" id="catalog-title">Все товары</h2>
+          <p class="catalog-products__count">6 товаров</p>
+        </div>
 
-      <div class="products-grid">
-        <article class="product-card product-card--featured">
-          <h3 class="product-card__title">Товар 1</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1000 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 1">
-            Заказать
-          </button>
-        </article>
+        <div class="products-grid products-grid--catalog">
+          <article class="product-card product-card--featured">
+            <span class="product-card__badge">Хит</span>
+            <a class="product-card__image-link" href="product.html">
+              <img class="product-card__image" src="images/keyboard-forge-k75.png" width="480" height="480" alt="Чёрная механическая клавиатура Forge K75">
+            </a>
+            <p class="product-card__category">Клавиатуры</p>
+            <h3 class="product-card__title"><a href="product.html">Forge K75</a></h3>
+            <p class="product-card__description">75%, Hot Swap, PBT-кейкапы и подключение USB-C.</p>
+            <div class="product-card__footer">
+              <p class="product-card__price">7 490 ₽</p>
+              <a class="button button--primary product-card__button" href="order.html?product=Forge%20K75">Заказать</a>
+            </div>
+          </article>
 
-        <article class="product-card product-card--featured">
-          <h3 class="product-card__title">Товар 2</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1500 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 1">
-            Заказать
-          </button>
-        </article>
+          <article class="product-card">
+            <img class="product-card__image" src="images/mouse-pulse-m20.png" width="480" height="480" alt="Чёрная беспроводная мышь Pulse M20" loading="lazy">
+            <p class="product-card__category">Мыши</p>
+            <h3 class="product-card__title">Pulse M20</h3>
+            <p class="product-card__description">Беспроводная мышь весом 59 г с сенсором 12 000 DPI.</p>
+            <div class="product-card__footer">
+              <p class="product-card__price">2 990 ₽</p>
+              <a class="button button--primary product-card__button" href="order.html?product=Pulse%20M20">Заказать</a>
+            </div>
+          </article>
 
-        <article class="product-card product-card--featured">
-          <h3 class="product-card__title">Товар 3</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 2000 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 1">
-            Заказать
-          </button>
-        </article>
-      </div>
-    </section>
+          <article class="product-card product-card--discount">
+            <span class="product-card__badge">−15%</span>
+            <img class="product-card__image" src="images/headphones-echo-h40.png" width="480" height="480" alt="Чёрные беспроводные наушники Echo H40" loading="lazy">
+            <p class="product-card__category">Наушники</p>
+            <h3 class="product-card__title">Echo H40</h3>
+            <p class="product-card__description">Bluetooth 5.3 и до 36 часов работы без подзарядки.</p>
+            <div class="product-card__footer">
+              <p class="product-card__price">
+                <span class="product-card__old-price">7 390 ₽</span>
+                6 290 ₽
+              </p>
+              <a class="button button--primary product-card__button" href="order.html?product=Echo%20H40">Заказать</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img class="product-card__image" src="images/webcam-focus-c10.png" width="480" height="480" alt="Чёрная веб-камера Focus C10" loading="lazy">
+            <p class="product-card__category">Веб-камеры</p>
+            <h3 class="product-card__title">Focus C10</h3>
+            <p class="product-card__description">Full HD 60 FPS, автофокус и встроенный микрофон.</p>
+            <div class="product-card__footer">
+              <p class="product-card__price">4 590 ₽</p>
+              <a class="button button--primary product-card__button" href="order.html?product=Focus%20C10">Заказать</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img class="product-card__image" src="images/lightbar-beam-l1.png" width="480" height="480" alt="Чёрная лампа для монитора Beam L1" loading="lazy">
+            <p class="product-card__category">Освещение</p>
+            <h3 class="product-card__title">Beam L1</h3>
+            <p class="product-card__description">Лампа для монитора с регулировкой яркости и пультом.</p>
+            <div class="product-card__footer">
+              <p class="product-card__price">3 790 ₽</p>
+              <a class="button button--primary product-card__button" href="order.html?product=Beam%20L1">Заказать</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="product-card__badge product-card__badge--new">Новинка</span>
+            <img class="product-card__image" src="images/hub-link-dock-7.png" width="480" height="480" alt="Чёрный USB-C хаб Link Dock 7" loading="lazy">
+            <p class="product-card__category">Аксессуары</p>
+            <h3 class="product-card__title">Link Dock 7</h3>
+            <p class="product-card__description">Семь портов, HDMI 4K, Power Delivery и картридер.</p>
+            <div class="product-card__footer">
+              <p class="product-card__price">5 290 ₽</p>
+              <a class="button button--primary product-card__button" href="order.html?product=Link%20Dock%207">Заказать</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    <div class="site-footer__inner">
+      <div class="site-footer__about">
+        <a class="site-footer__brand" href="index.html">
+          <img src="images/madshop-logo.svg" width="40" height="40" alt="">
+          <span>MadShop</span>
+        </a>
+        <p>Компьютерная периферия для работы, игр и творчества.</p>
+      </div>
+      <div class="site-footer__column">
+        <h2 class="site-footer__title">Покупателям</h2>
+        <ul class="site-footer__list">
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="order.html">Оформление заказа</a></li>
+          <li><a href="contacts.html#delivery">Доставка и оплата</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__column">
+        <h2 class="site-footer__title">Контакты</h2>
+        <address class="site-footer__address">
+          <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+          <a href="mailto:madshop@email.ru">madshop@email.ru</a>
+          <span>Москва, ул. Электродная, 8</span>
+        </address>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>© 2026 MadShop</p>
+      <p>Информация на сайте не является публичной офертой.</p>
+    </div>
   </footer>
 </body>
 </html>

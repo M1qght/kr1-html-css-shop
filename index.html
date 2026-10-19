@@ -3,177 +3,295 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MadShop — магазин компьютерной периферии для работы, игр и творчества.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
-  <meta property="og:image" content="https://username.github.io/kr1-html-css-shop/images/preview.jpg">
-  <title>Каталог товаров</title>
+  <meta property="og:title" content="MadShop — компьютерная периферия">
+  <meta property="og:description" content="Клавиатуры, мыши, наушники и аксессуары для удобного рабочего места.">
+  <meta property="og:image" content="https://m1qght.github.io/kr1-html-css-shop/images/keyboard-forge-k75.png">
+  <title>MadShop — компьютерная периферия</title>
+  <link rel="icon" href="images/madshop-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
 
   <header class="site-header">
-    <h1>Учебный интернет-магазин</h1>
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
-      
-      <!-- Навигация -->
+      <a class="site-header__brand" href="index.html" aria-label="MadShop — на главную">
+        <img class="site-header__logo" src="images/madshop-logo.svg" width="48" height="48" alt="">
+        <span class="site-header__name">MadShop</span>
+      </a>
+
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="#advantages">Преимущества</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="#popular">Популярные товары</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="#contacts">Обратная связь</a></li>
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">Главная</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="product.html">Хит продаж</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="order.html">Оформить заказ</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Основное содержимое страницы -->
-  <main>
+  <main id="main-content">
     <section class="hero">
-      <h2>Главная страница проекта</h2>
-      <p>
-        Это стартовая страница учебного frontend-проекта.
-        В дальнейшем здесь будет разработан многостраничный сайт
-        интернет-магазина или каталога услуг.
-      </p>
-      <a class="button button--primary" href="#popular">Перейти к товарам</a>
-    </section>
+      <div class="hero__content">
+        <p class="hero__eyebrow">Техника для комфортного сетапа</p>
+        <h1 class="hero__title">Периферия, с которой всё на своих местах</h1>
+        <p class="hero__text">
+          Подбираем надёжные устройства для работы, игр и творчества.
+          Только понятные характеристики и полезные функции.
+        </p>
 
-    <section>
-      <h2>О проекте</h2>
-      <p>
-        В рамках данного проекта будет разработан многостраничный сайт
-        интернет-магазина или каталога услуг. Проект будет постепенно
-        расширяться на следующих практических занятиях.
-      </p>
-    </section>
+        <div class="hero__actions">
+          <a class="button button--primary" href="catalog.html">Смотреть каталог</a>
+          <a class="button button--secondary" href="#advantages">Почему мы?</a>
+        </div>
 
-    <section class="section" id="advantages">
-      <h2>Преимущества проекта</h2>
-    
-      <ul class="advantages-list">
-        <li>понятная HTML-структура;</li>
-        <li>семантические блоки страницы;</li>
-        <li>подключение внешнего CSS-файла;</li>
-        <li>подготовка к разработке многостраничного сайта.</li>
-      </ul>
+        <ul class="hero__facts" aria-label="Преимущества заказа">
+          <li class="hero__fact">
+            <strong>1 год</strong>
+            <span>гарантии</span>
+          </li>
+          <li class="hero__fact">
+            <strong>от 1 дня</strong>
+            <span>доставка</span>
+          </li>
+          <li class="hero__fact">
+            <strong>14 дней</strong>
+            <span>на возврат</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="hero__visual">
+        <span class="hero__badge">Выбор покупателей</span>
+        <img
+          class="hero__image"
+          src="images/keyboard-forge-k75.png"
+          width="640"
+          height="640"
+          alt="Механическая клавиатура Forge K75"
+        >
+      </div>
     </section>
 
     <section class="section" id="popular">
-      <h2>Популярные товары</h2>
+      <div class="section__heading">
+        <div>
+          <p class="section__eyebrow">Популярное</p>
+          <h2 class="section__title">Проверенные модели</h2>
+        </div>
+        <a class="text-link" href="catalog.html">Все товары <span aria-hidden="true">→</span></a>
+      </div>
 
       <div class="products-grid">
         <article class="product-card product-card--featured">
-          <h3 class="product-card__title">Товар 1</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1000 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 1">
-            Заказать
-          </button>
+          <span class="product-card__badge">Хит</span>
+          <a class="product-card__image-link" href="product.html" aria-label="Подробнее о клавиатуре Forge K75">
+            <img
+              class="product-card__image"
+              src="images/keyboard-forge-k75.png"
+              width="480"
+              height="480"
+              alt="Чёрная механическая клавиатура Forge K75"
+              loading="lazy"
+            >
+          </a>
+          <p class="product-card__category">Клавиатуры</p>
+          <h3 class="product-card__title">
+            <a href="product.html">Forge K75</a>
+          </h3>
+          <p class="product-card__description">
+            Компактная механическая клавиатура с горячей заменой переключателей.
+          </p>
+          <div class="product-card__footer">
+            <p class="product-card__price">7 490 ₽</p>
+            <button class="button button--primary product-card__button" type="button" data-product="Forge K75">
+              Заказать
+            </button>
+          </div>
         </article>
 
-        <article class="product-card product-card--featured">
-          <h3 class="product-card__title">Товар 2</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1500 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 1">
-            Заказать
-          </button>
+        <article class="product-card">
+          <a class="product-card__image-link" href="order.html?product=Pulse%20M20" aria-label="Заказать мышь Pulse M20">
+            <img
+              class="product-card__image"
+              src="images/mouse-pulse-m20.png"
+              width="480"
+              height="480"
+              alt="Чёрная беспроводная мышь Pulse M20"
+              loading="lazy"
+            >
+          </a>
+          <p class="product-card__category">Мыши</p>
+          <h3 class="product-card__title">Pulse M20</h3>
+          <p class="product-card__description">
+            Лёгкая беспроводная мышь с точным сенсором и тихими переключателями.
+          </p>
+          <div class="product-card__footer">
+            <p class="product-card__price">2 990 ₽</p>
+            <button class="button button--primary product-card__button" type="button" data-product="Pulse M20">
+              Заказать
+            </button>
+          </div>
         </article>
 
-        <article class="product-card product-card--featured">
-          <h3 class="product-card__title">Товар 3</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 2000 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 1">
-            Заказать
-          </button>
+        <article class="product-card product-card--discount">
+          <span class="product-card__badge">−15%</span>
+          <a class="product-card__image-link" href="order.html?product=Echo%20H40" aria-label="Заказать наушники Echo H40">
+            <img
+              class="product-card__image"
+              src="images/headphones-echo-h40.png"
+              width="480"
+              height="480"
+              alt="Чёрные беспроводные наушники Echo H40"
+              loading="lazy"
+            >
+          </a>
+          <p class="product-card__category">Наушники</p>
+          <h3 class="product-card__title">Echo H40</h3>
+          <p class="product-card__description">
+            Полноразмерные наушники с мягкими амбушюрами и автономностью до 36 часов.
+          </p>
+          <div class="product-card__footer">
+            <p class="product-card__price">
+              <span class="product-card__old-price">7 390 ₽</span>
+              6 290 ₽
+            </p>
+            <button class="button button--primary product-card__button" type="button" data-product="Echo H40">
+              Заказать
+            </button>
+          </div>
         </article>
       </div>
     </section>
 
+    <section class="section" id="advantages">
+      <div class="section__heading">
+        <div>
+          <p class="section__eyebrow">Почему мы</p>
+          <h2 class="section__title">Покупка без лишних вопросов</h2>
+        </div>
+      </div>
 
-    <aside class="aside-info">
-      <h2>Информация для студентов</h2>
-      <p>
-        На следующих практических занятиях этот проект будет расширяться:
-        появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
-        БЭМ-структура и адаптивная версия сайта.
-      </p>
+      <div class="advantages-grid">
+        <article class="advantage-card">
+          <span class="advantage-card__number">01</span>
+          <h3 class="advantage-card__title">Понятный каталог</h3>
+          <p class="advantage-card__text">Короткие описания помогают быстро сравнить товары.</p>
+        </article>
+        <article class="advantage-card">
+          <span class="advantage-card__number">02</span>
+          <h3 class="advantage-card__title">Проверка перед отправкой</h3>
+          <p class="advantage-card__text">Проверяем комплектность и внешний вид устройства.</p>
+        </article>
+        <article class="advantage-card">
+          <span class="advantage-card__number">03</span>
+          <h3 class="advantage-card__title">Помощь с выбором</h3>
+          <p class="advantage-card__text">Подскажем, что подойдёт под ваши задачи и бюджет.</p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="buyer-note">
+      <div>
+        <p class="buyer-note__eyebrow">Информация для покупателей</p>
+        <h2 class="buyer-note__title">Не уверены в совместимости?</h2>
+        <p class="buyer-note__text">
+          Опишите свой компьютер и задачи в комментарии к заказу.
+          Мы проверим подключение и свяжемся с вами.
+        </p>
+      </div>
+      <a class="button button--light" href="contacts.html">Задать вопрос</a>
     </aside>
   </main>
 
-  <footer class="site-footer" id="contacts">
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__about">
+        <a class="site-footer__brand" href="index.html">
+          <img src="images/madshop-logo.svg" width="40" height="40" alt="">
+          <span>MadShop</span>
+        </a>
+        <p>Компьютерная периферия для работы, игр и творчества.</p>
+      </div>
+
+      <div class="site-footer__column">
+        <h2 class="site-footer__title">Покупателям</h2>
+        <ul class="site-footer__list">
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="order.html">Оформление заказа</a></li>
+          <li><a href="contacts.html#delivery">Доставка и оплата</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__column">
+        <h2 class="site-footer__title">Контакты</h2>
+        <address class="site-footer__address">
+          <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+          <a href="mailto:madshop@email.ru">madshop@email.ru</a>
+          <span>Москва, ул. Электродная, 8</span>
+        </address>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>
+        © 2026 MadShop <br>
+        Дисциплина: Фронтенд и бекенд разработка
+      </p>
+      <p>Информация на сайте не является публичной офертой.</p>
+    </div>
   </footer>
 
   <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-    <h2 class="order-dialog__tittle" id="order-dialog-title">Оформление заявки</h2>
+    <div class="order-dialog__header">
+      <div>
+        <p class="order-dialog__eyebrow">Быстрый заказ</p>
+        <h2 class="order-dialog__title" id="order-dialog-title">Оставьте контакты</h2>
+      </div>
+      <button class="order-dialog__close" type="button" id="close-order-dialog" aria-label="Закрыть окно">×</button>
+    </div>
+
+    <p class="order-dialog__text">
+      Менеджер уточнит наличие, способ получения и итоговую стоимость.
+    </p>
 
     <form class="order-form" id="order-form" action="#" method="post" novalidate>
       <input id="selected-product" name="selected-product" type="hidden">
 
       <div class="order-form__field">
         <label class="order-form__label" for="order-name">Имя</label>
-        <input
-          id="order-name"
-          class="order-form__input"
-          name="name"
-          type="text"
-          placeholder="Введите ваше имя"
-          minlength="2"
-          autocomplete="given-name"
-          required
-        >
+        <input class="order-form__input" id="order-name" name="name" type="text" minlength="2" autocomplete="name" placeholder="Например, Максим" required>
       </div>
 
       <div class="order-form__field">
         <label class="order-form__label" for="order-email">E-mail</label>
-        <input
-          id="order-email"
-          class="order-form__input"
-          name="email"
-          type="email"
-          placeholder="example@mail.ru"
-          autocomplete="email"
-          required
-        >
+        <input class="order-form__input" id="order-email" name="email" type="email" autocomplete="email" placeholder="mail@example.ru" required>
       </div>
 
       <div class="order-form__field">
         <label class="order-form__label" for="order-phone">Телефон</label>
-        <input
-          id="order-phone"
-          class="order-form__input"
-          name="phone"
-          type="tel"
-          inputmode="tel"
-          placeholder="+7 (900) 000-00-00"
-          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-          required
-        >
-        <small class="order-form__small">Формат: +7 (900) 000-00-00</small>
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-date">Дата связи</label>
-        <input
-          id="order-date"
-          class="order-form__input"
-          name="date"
-          type="date"
-        >
+        <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+        <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
       </div>
 
       <div class="order-form__field">
         <label class="order-form__label" for="order-topic">Тема заявки</label>
-        <select id="order-topic" class="order-form__select" name="topic" required>
+        <select class="order-form__select" id="order-topic" name="topic" required>
           <option value="">Выберите тему</option>
           <option value="product">Заказ товара</option>
           <option value="consultation">Консультация</option>
@@ -183,38 +301,24 @@
 
       <div class="order-form__field">
         <label class="order-form__label" for="order-comment">Комментарий</label>
-        <textarea
-          id="order-comment"
-          class="order-form__textarea"
-          name="comment"
-          rows="4"
-          placeholder="Укажите дополнительную информацию"
-        ></textarea>
+        <textarea class="order-form__textarea" id="order-comment" name="comment" rows="3" placeholder="Дополнительные пожелания"></textarea>
       </div>
 
-      <div class="order-form__field form-field--checkbox">
-        <label class="order-form__label">
-          <input
-            id="order-agreement"
-            class="order-form__select"
-            name="agreement"
-            type="checkbox"
-            required
-          >
-          Я согласен на обработку данных
-        </label>
-      </div>
+      <label class="order-form__check">
+        <input name="agreement" type="checkbox" required>
+        <span>Согласен на обработку данных для связи по заявке</span>
+      </label>
 
       <div class="order-form__actions">
-        <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
-        <button class="button button-primary" type="submit">Отправить заявку</button>
+        <button class="button button--secondary" type="button" id="cancel-order-dialog">Отмена</button>
+        <button class="button button--primary" type="submit">Отправить заявку</button>
       </div>
     </form>
   </dialog>
 
-  <p class="success-message" id="success-message" hidden>
-    Форма успешно отправлена!
-  </p>
-
+  <div class="toast" id="success-message" role="status" aria-live="polite" hidden>
+    <strong>Заявка отправлена</strong>
+    <span>Мы свяжемся с вами в ближайшее время.</span>
+  </div>
 </body>
 </html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Оформление заказа в MadShop: выберите товар и оставьте контактные данные.">
+  <title>Оформление заказа — MadShop</title>
+  <link rel="icon" href="images/madshop-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="index.html" aria-label="MadShop — на главную">
+        <img class="site-header__logo" src="images/madshop-logo.svg" width="48" height="48" alt="">
+        <span class="site-header__name">MadShop</span>
+      </a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Хит продаж</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="order.html" aria-current="page">Оформить заказ</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current">Оформление заказа</span>
+    </nav>
+
+    <section class="page-intro">
+      <p class="page-intro__eyebrow">Оформление заказа</p>
+      <h1 class="page-intro__title">Оставьте заявку — детали уточним по телефону</h1>
+      <p class="page-intro__text">
+        Оплата на сайте не требуется. После отправки менеджер проверит наличие
+        и согласует способ получения.
+      </p>
+    </section>
+
+    <div class="checkout-layout">
+      <section class="checkout-card" aria-labelledby="checkout-title">
+        <h2 class="checkout-card__title" id="checkout-title">Данные покупателя</h2>
+
+        <form class="order-form order-form--page" id="checkout-form" action="#" method="post" novalidate>
+          <div class="order-form__field">
+            <label class="order-form__label" for="checkout-product">Товар</label>
+            <select class="order-form__select" id="checkout-product" name="product" required>
+              <option value="">Выберите товар</option>
+              <option value="Forge K75">Forge K75 — 7 490 ₽</option>
+              <option value="Pulse M20">Pulse M20 — 2 990 ₽</option>
+              <option value="Echo H40">Echo H40 — 6 290 ₽</option>
+              <option value="Focus C10">Focus C10 — 4 590 ₽</option>
+              <option value="Beam L1">Beam L1 — 3 790 ₽</option>
+              <option value="Link Dock 7">Link Dock 7 — 5 290 ₽</option>
+            </select>
+          </div>
+
+          <div class="order-form__row">
+            <div class="order-form__field">
+              <label class="order-form__label" for="checkout-name">Имя</label>
+              <input class="order-form__input" id="checkout-name" name="name" type="text" minlength="2" autocomplete="name" placeholder="Максим" required>
+            </div>
+            <div class="order-form__field">
+              <label class="order-form__label" for="checkout-phone">Телефон</label>
+              <input class="order-form__input" id="checkout-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+            </div>
+          </div>
+
+          <div class="order-form__row">
+            <div class="order-form__field">
+              <label class="order-form__label" for="checkout-email">E-mail</label>
+              <input class="order-form__input" id="checkout-email" name="email" type="email" autocomplete="email" placeholder="mail@example.ru" required>
+            </div>
+            <div class="order-form__field">
+              <label class="order-form__label" for="checkout-date">Дата связи</label>
+              <input class="order-form__input" id="checkout-date" name="date" type="date">
+            </div>
+          </div>
+
+          <fieldset class="order-form__fieldset">
+            <legend class="order-form__legend">Способ получения</legend>
+            <label class="order-form__radio">
+              <input type="radio" name="delivery" value="courier" checked>
+              <span>
+                <strong>Курьером</strong>
+                <small>Стоимость уточнит менеджер</small>
+              </span>
+            </label>
+            <label class="order-form__radio">
+              <input type="radio" name="delivery" value="pickup">
+              <span>
+                <strong>Самовывоз</strong>
+                <small>Москва, ул. Электродная, 8</small>
+              </span>
+            </label>
+          </fieldset>
+
+          <div class="order-form__field">
+            <label class="order-form__label" for="checkout-topic">Тема заявки</label>
+            <select class="order-form__select" id="checkout-topic" name="topic" required>
+              <option value="order">Заказ товара</option>
+              <option value="consultation">Нужна консультация</option>
+              <option value="compatibility">Проверка совместимости</option>
+            </select>
+          </div>
+
+          <div class="order-form__field">
+            <label class="order-form__label" for="checkout-comment">Комментарий</label>
+            <textarea class="order-form__textarea" id="checkout-comment" name="comment" rows="4" placeholder="Дополнительные пожелания к заказу"></textarea>
+          </div>
+
+          <label class="order-form__check">
+            <input name="agreement" type="checkbox" required>
+            <span>Согласен на обработку данных для связи по заявке</span>
+          </label>
+
+          <button class="button button--primary button--large" type="submit">
+            Отправить заявку
+          </button>
+        </form>
+
+        <div class="form-success" id="checkout-success" role="status" tabindex="-1" hidden>
+          <h2>Заявка принята</h2>
+          <p>Мы свяжемся с вами в рабочее время и уточним детали заказа.</p>
+          <a class="button button--secondary" href="catalog.html">Вернуться в каталог</a>
+        </div>
+      </section>
+
+      <aside class="checkout-info">
+        <h2 class="checkout-info__title">Как это работает</h2>
+        <ol class="checkout-info__steps">
+          <li>
+            <span>1</span>
+            <div><strong>Отправьте форму</strong><p>Укажите товар и контакты.</p></div>
+          </li>
+          <li>
+            <span>2</span>
+            <div><strong>Дождитесь звонка</strong><p>Проверим наличие и доставку.</p></div>
+          </li>
+          <li>
+            <span>3</span>
+            <div><strong>Получите заказ</strong><p>Курьером или самовывозом.</p></div>
+          </li>
+        </ol>
+        <p class="checkout-info__help">
+          Нужна помощь? <br>
+          Позвоните: <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+        </p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__about">
+        <a class="site-footer__brand" href="index.html">
+          <img src="images/madshop-logo.svg" width="40" height="40" alt="">
+          <span>MadShop</span>
+        </a>
+        <p>Компьютерная периферия для работы, игр и творчества.</p>
+      </div>
+      <div class="site-footer__column">
+        <h2 class="site-footer__title">Покупателям</h2>
+        <ul class="site-footer__list">
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="order.html">Оформление заказа</a></li>
+          <li><a href="contacts.html#delivery">Доставка и оплата</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__column">
+        <h2 class="site-footer__title">Контакты</h2>
+        <address class="site-footer__address">
+          <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+          <a href="mailto:madshop@email.ru">madshop@email.ru</a>
+          <span>Москва, ул. Электродная, 8</span>
+        </address>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>© 2026 MadShop</p>
+      <p>Информация на сайте не является публичной офертой.</p>
+    </div>
+  </footer>
+</body>
+</html>
